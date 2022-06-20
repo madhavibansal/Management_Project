@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
 exports.connectDB = async () => {
-    mongoose.connect("mongodb+srv://madhavibansal:madhaviba@cluster0.9ka80.mongodb.net/mobilloite?retryWrites=true&w=majority", {
+    mongoose.connect("process.env.DB_CONNECT", {
             useUnifiedTopology: true,
         })
         .then((data) => console.log(`Connected Successfully ${data.connection.host}`))
